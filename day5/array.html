@@ -13,7 +13,7 @@
 <body>
 
     <script>
-        const friends = ["Hemanth", "Saron", "Harshan", "Vikram"];
+        const friends = ["Hemanth", "Saron", "Harshan", "Hari", "Vikram", "Karthi"];
         document.write(friends + "<br>" + "<br>");
         document.write("<hr>")
         document.write("UNSHIFT OPERATION " + "<br>");
@@ -44,10 +44,37 @@
 
         document.write("<hr>");
         document.write("For loop" + "<br>" + "<br>");
-        for (var i = 0; i < friends.length; ++i) {
+        for (var i = 0; i < friends.length; i++) {
             document.write("" + friends[i] + "<br>")
         }
+
+        document.write("<hr>");
+        document.write("For OF" + "<br>" + "<br>");
+        for (let name of friends) {
+            document.write(name + "<br>")
+        }
+
+        document.write("<hr>");
+        document.write("For IN" + "<br>" + "<br>");
+        for (let name in friends) {
+            document.write(friends[name] + "<br>")
+        }
+        document.write("<hr>");
+        document.write("For IN" + "<br>" + "<br>");
+        for (let name in friends) {
+            document.write(friends[name] + "<br>")
+        }
+        document.write("<hr>");
+        document.write("For Each" + "<br>" + "<br>");
+        friends.forEach(function(name) {
+            document.write(name + "<br>")
+        });
+        document.write("<hr>");
+        document.write("Date and Time" + "<br>" + "<br>");
+        const date = new Date();
+        document.write(date);
     </script>
+
 </body>
 
 </html>
