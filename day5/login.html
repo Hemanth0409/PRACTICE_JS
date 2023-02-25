@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN FORM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function validate() {
+            const username = document.getElementById("username1").value;
+            const password = document.getElementById("password1").value;
+            const confirmPassword = document.getElementById("password2").value;
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,15}$/;
+
+            if (!username || !password || !confirmPassword) {
+                alert("Please fill all the fields");
+                return false;
+            } else if (!/^[a-zA-Z\s]+$/.test(username)) {
+                alert("Username should only contain alphabets and blanks");
+                return false;
+            } else if (!passwordRegex.test(password)) {
+                alert("Password must be 8 characters long and contain 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character");
+                return false;
+            } else if (password !== confirmPassword) {
+                alert("Password and confirm password do not match");
+                return false;
+            } else
+                return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form1" onsubmit="return validate()" action="register_form.html">
+
+        <header></header>
+        <div class="mb-3 mt-lg-5 ms-5">
+            <label for="exampleInputEmail1" class="form-label">User Name</label>
+            <input type="text" class="form-control w-50" id="username1">
+        </div>
+        <div class="mb-3 ms-5 mt-lg-5">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control w-50" id="password1"></div>
+        <div class="mb-3 ms-5 mt-lg-5">
+            <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control w-50" id="password2" />
+        </div>
+        <div class="mb-3 ms-5 mt-lg-5">
+            <button type="submit" class="btn btn-primary">Submit</button></div>
+    </form>
+</body>
+
+</html>
